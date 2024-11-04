@@ -9,29 +9,30 @@
 </head>
 <body>
     <div class="dashboard">
-        <!-- Зона 2: KPI метрика -->
+        <!-- Зона 1: Круговая диаграмма (Правый верхний угол) -->
+        <div class="zone zone1">
+            <h2>Общее состояние качества данных</h2>
+            <canvas id="pieChart"></canvas>
+        </div>
+        <!-- Зона 2: KPI метрика (Левый верхний угол) -->
         <div class="zone zone2">
             <h2>Качество данных</h2>
             <div class="kpi">
                 <span>56%</span>
             </div>
         </div>
-        <!-- Зона 1: Круговая диаграмма -->
-        <div class="zone zone1">
-            <canvas id="pieChart"></canvas>
-        </div>
-        <!-- Зона 3: Батарейка -->
+        <!-- Зона 3: Батарейка (Под второй зоной) -->
         <div class="zone zone3">
+            <h2>Метрики качества данных</h2>
             <div class="battery">
+                <div class="cell">Соответствие стандартам</div>
+                <div class="cell">Уровень дубликатов</div>
+                <div class="cell">Целостность данных</div>
+                <div class="cell">Своевременность обновлений</div>
+                <div class="cell">Полнота данных</div>
+                <div class="cell">Точность данных</div>
                 <div class="cell">Данные используются в поиске</div>
                 <div class="cell">Постоянство событий</div>
-                <!-- Добавьте оставшиеся 6 секций с соответствующими подписями -->
-                <div class="cell">Точность данных</div>
-                <div class="cell">Полнота данных</div>
-                <div class="cell">Своевременность обновлений</div>
-                <div class="cell">Целостность данных</div>
-                <div class="cell">Уровень дубликатов</div>
-                <div class="cell">Соответствие стандартам</div>
             </div>
         </div>
         <!-- Зона 4: Финансовая эффективность -->
@@ -45,4 +46,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
