@@ -1,5 +1,5 @@
-// Данные для круговой диаграммы
-const pieData = {
+// Данные для круговой диаграммы проверок качества данных (Часть 1)
+const qualityChecksData = {
     labels: ['Успешные проверки', 'Неуспешные проверки'],
     datasets: [{
         data: [56, 44],
@@ -10,10 +10,10 @@ const pieData = {
     }]
 };
 
-// Конфигурация круговой диаграммы
-const pieConfig = {
+// Конфигурация диаграммы проверок качества данных
+const qualityChecksConfig = {
     type: 'doughnut',
-    data: pieData,
+    data: qualityChecksData,
     options: {
         responsive: true,
         plugins: {
@@ -23,7 +23,7 @@ const pieConfig = {
             },
             title: {
                 display: true,
-                text: 'Общее состояние качества данных',
+                text: 'Проверки Качества Данных',
                 color: '#fff',
                 font: { size: 18 }
             }
@@ -35,11 +35,44 @@ const pieConfig = {
     }
 };
 
-// Отрисовка круговой диаграммы
-const pieChartCtx = document.getElementById('pieChart').getContext('2d');
-new Chart(pieChartCtx, pieConfig);
+// Данные для круговой диаграммы полноты данных (Часть 3)
+const dataCompletenessData = {
+    labels: ['Заполнено', 'Не заполнено'],
+    datasets: [{
+        data: [90, 10], // Используем показатель полноты данных из предыдущего кода (90%)
+        backgroundColor: ['rgba(40, 167, 69, 0.8)', 'rgba(138, 43, 226, 0.8)'],
+        borderColor: ['#28a745', '#8A2BE2'],
+        borderWidth: 2,
+        hoverOffset: 10
+    }]
+};
 
-// Данные для трендового графика в KPI
+// Конфигурация диаграммы полноты данных
+const dataCompletenessConfig = {
+    type: 'doughnut',
+    data: dataCompletenessData,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: { color: '#fff' }
+            },
+            title: {
+                display: true,
+                text: 'Полнота Данных',
+                color: '#fff',
+                font: { size: 18 }
+            }
+        },
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+};
+
+// Данные для трендового графика в KPI (Часть 2)
 const kpiTrendData = {
     labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
     datasets: [{
@@ -75,6 +108,17 @@ const kpiTrendConfig = {
     }
 };
 
-// Отрисовка трендового графика в KPI
-const kpiTrendCtx = document.getElementById('kpiTrendOverall').getContext('2d');
-new Chart(kpiTrendCtx, kpiTrendConfig);
+// Отрисовка диаграмм после загрузки страницы
+window.onload = function() {
+    // Часть 1: Диаграмма проверок качества данных
+    const qualityChecksCtx = document.getElementById('qualityChecksChart').getContext('2d');
+    new Chart(qualityChecksCtx, qualityChecksConfig);
+
+    // Часть 3: Диаграмма полноты данных
+    const dataCompletenessCtx = document.getElementById('dataCompletenessChart').getContext('2d');
+    new Chart(dataCompletenessCtx, dataCompletenessConfig);
+
+    // Часть 2: Трендовый график в KPI
+    const kpiTrendCtx = document.getElementById('kpiTrendOverall').getContext('2d');
+    new Chart(kpiTrendCtx, kpiTrendConfig);
+};
