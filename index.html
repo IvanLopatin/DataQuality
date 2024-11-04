@@ -1,1 +1,48 @@
-123
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Дашборд Качества Данных</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение библиотеки Chart.js для графиков -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Зона 2: KPI метрика -->
+        <div class="zone zone2">
+            <h2>Качество данных</h2>
+            <div class="kpi">
+                <span>56%</span>
+            </div>
+        </div>
+        <!-- Зона 1: Круговая диаграмма -->
+        <div class="zone zone1">
+            <canvas id="pieChart"></canvas>
+        </div>
+        <!-- Зона 3: Батарейка -->
+        <div class="zone zone3">
+            <div class="battery">
+                <div class="cell">Данные используются в поиске</div>
+                <div class="cell">Постоянство событий</div>
+                <!-- Добавьте оставшиеся 6 секций с соответствующими подписями -->
+                <div class="cell">Точность данных</div>
+                <div class="cell">Полнота данных</div>
+                <div class="cell">Своевременность обновлений</div>
+                <div class="cell">Целостность данных</div>
+                <div class="cell">Уровень дубликатов</div>
+                <div class="cell">Соответствие стандартам</div>
+            </div>
+        </div>
+        <!-- Зона 4: Финансовая эффективность -->
+        <div class="zone zone4">
+            <h2>Финансовая эффективность затрат на накопители</h2>
+            <p>Плохое качество данных приводит к переплате денежных средств в <strong>1 млн $</strong></p>
+        </div>
+    </div>
+
+    <!-- Скрипт для построения круговой диаграммы -->
+    <script src="script.js"></script>
+</body>
+</html>
+
