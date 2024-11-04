@@ -12,10 +12,19 @@ const data = {
 const config = {
     type: 'pie',
     data: data,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'bottom',
+            }
+        }
+    }
 };
 
-// Рендеринг диаграммы
-const pieChart = new Chart(
-    document.getElementById('pieChart'),
-    config
-);
+// Рендеринг диаграммы после загрузки страницы
+window.addEventListener('load', () => {
+    const ctx = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctx, config);
+});
