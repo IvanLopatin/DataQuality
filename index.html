@@ -6,32 +6,36 @@
     <title>Дашборд Качества Данных</title>
     <!-- Подключение библиотеки Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Встроенный CSS -->
+    <!-- Подключение CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Дашборд Качества Данных</h1>
 
-    <!-- KPI Индикаторы -->
-    <div class="kpi-container">
-        <div class="kpi">
-            <h4>Общее Качество Данных</h4>
-            <p>56%</p>
-            <canvas class="trend-canvas" id="kpiTrendOverall"></canvas>
-        </div>
-    </div>
-
     <!-- Контейнер дашборда -->
     <div class="dashboard-container">
-        <!-- Зона 1: Круговая диаграмма -->
-        <div class="card">
-            <h3>Общее состояние качества данных</h3>
-            <canvas id="pieChart"></canvas>
+        <!-- Часть 2: KPI общее качество данных (левая верхняя) -->
+        <div class="card kpi-card">
+            <h3>Общее Качество Данных</h3>
+            <p class="kpi-value">56%</p>
+            <canvas class="trend-canvas" id="kpiTrendOverall"></canvas>
         </div>
 
-        <!-- Зона 3: Батарейка -->
+        <!-- Часть 1: Круговая диаграмма проверок качества данных (правая верхняя) -->
         <div class="card">
-            <h3>Метрики качества данных</h3>
+            <h3>Проверки Качества Данных</h3>
+            <canvas id="qualityChecksChart"></canvas>
+        </div>
+
+        <!-- Часть 3: Круговая диаграмма полноты данных (средняя правая) -->
+        <div class="card">
+            <h3>Полнота Данных</h3>
+            <canvas id="dataCompletenessChart"></canvas>
+        </div>
+
+        <!-- Часть 4: Батарейка с секциями -->
+        <div class="card battery-card">
+            <h3>Метрики Качества Данных</h3>
             <div class="battery">
                 <div class="cell">Соответствие стандартам</div>
                 <div class="cell">Уровень дубликатов</div>
@@ -44,9 +48,9 @@
             </div>
         </div>
 
-        <!-- Зона 4: Финансовая эффективность -->
-        <div class="card">
-            <h3>Финансовая эффективность затрат на накопители</h3>
+        <!-- Часть 5: Финансовая выгода -->
+        <div class="card financial-card">
+            <h3>Финансовая Эффективность</h3>
             <p>Плохое качество данных приводит к переплате денежных средств в <strong>1 млн $</strong></p>
         </div>
     </div>
