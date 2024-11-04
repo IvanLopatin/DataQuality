@@ -39,7 +39,7 @@ const qualityChecksConfig = {
 const dataCompletenessData = {
     labels: ['Заполнено', 'Не заполнено'],
     datasets: [{
-        data: [90, 10], // Используем показатель полноты данных из предыдущего кода (90%)
+        data: [90, 10], // Используем показатель полноты данных (90%)
         backgroundColor: ['rgba(40, 167, 69, 0.8)', 'rgba(138, 43, 226, 0.8)'],
         borderColor: ['#28a745', '#8A2BE2'],
         borderWidth: 2,
