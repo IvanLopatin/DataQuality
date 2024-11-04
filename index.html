@@ -2,28 +2,36 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дашборд Качества Данных</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Подключение библиотеки Chart.js для графиков -->
+    <!-- Подключение библиотеки Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Встроенный CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="dashboard">
-        <!-- Зона 1: Круговая диаграмма (Правый верхний угол) -->
-        <div class="zone zone1">
-            <h2>Общее состояние качества данных</h2>
+    <h1>Дашборд Качества Данных</h1>
+
+    <!-- KPI Индикаторы -->
+    <div class="kpi-container">
+        <div class="kpi">
+            <h4>Общее Качество Данных</h4>
+            <p>56%</p>
+            <canvas class="trend-canvas" id="kpiTrendOverall"></canvas>
+        </div>
+    </div>
+
+    <!-- Контейнер дашборда -->
+    <div class="dashboard-container">
+        <!-- Зона 1: Круговая диаграмма -->
+        <div class="card">
+            <h3>Общее состояние качества данных</h3>
             <canvas id="pieChart"></canvas>
         </div>
-        <!-- Зона 2: KPI метрика (Левый верхний угол) -->
-        <div class="zone zone2">
-            <h2>Качество данных</h2>
-            <div class="kpi">
-                <span>56%</span>
-            </div>
-        </div>
-        <!-- Зона 3: Батарейка (Под второй зоной) -->
-        <div class="zone zone3">
-            <h2>Метрики качества данных</h2>
+
+        <!-- Зона 3: Батарейка -->
+        <div class="card">
+            <h3>Метрики качества данных</h3>
             <div class="battery">
                 <div class="cell">Соответствие стандартам</div>
                 <div class="cell">Уровень дубликатов</div>
@@ -35,14 +43,15 @@
                 <div class="cell">Постоянство событий</div>
             </div>
         </div>
+
         <!-- Зона 4: Финансовая эффективность -->
-        <div class="zone zone4">
-            <h2>Финансовая эффективность затрат на накопители</h2>
+        <div class="card">
+            <h3>Финансовая эффективность затрат на накопители</h3>
             <p>Плохое качество данных приводит к переплате денежных средств в <strong>1 млн $</strong></p>
         </div>
     </div>
 
-    <!-- Скрипт для построения круговой диаграммы -->
+    <!-- Скрипт для построения диаграмм -->
     <script src="script.js"></script>
 </body>
 </html>
